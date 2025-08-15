@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Abhi Thombare — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="">
+  <div class="top-right">
+    <!-- Resume download button (place resume.pdf in same folder) -->
+    <a class="resume-btn" href="resume.pdf" download aria-label="Download resume">
+      <i class="fa-solid fa-download"></i> Resume
+    </a>
+  </div>
+
+  <div class="page">
+    <div class="hero">
+      <div class="hero-left">
+        <!-- keep the png file in same folder -->
+        <img src="assets/abhi.png" My Image" />
+      </div>
+
+      <div class="hero-right">
+        <div class="name-row">
+          <h1>Abhi Thombare</h1>
+          <div class="name-sub">/* MERN • React • Node */</div>
+        </div>
+
+        <div class="role" id="roleText">MERN Stack Developer</div>
+
+        <div class="about" aria-labelledby="aboutTitle">
+          <h3 id="aboutTitle">About Me</h3>
+          <p>
+            I build modern web applications using the MERN stack (MongoDB, Express.js, React, and Node.js).
+            My focus is on creating full-stack solutions that are fast, scalable, and easy to maintain.
+          </p>
+          <p>Some things I've worked on:</p>
+          <ul>
+            <li>Full-featured eCommerce site with admin dashboard and payment integration</li>
+            <li>Real-time chat application using WebSocket and MongoDB</li>
+            <li>REST APIs for data-driven dashboards and admin tools</li>
+            <li>Authentication systems using JWT and secure login flows</li>
+          </ul>
+
+          <p>I enjoy handling both frontend UI and backend logic, but my goal is always to keep things clean and
+            efficient. Open to talking about React, APIs, databases, or anything full-stack.</p>
+
+          <div class="socials" aria-label="Social links">
+            <a class="github" href="https://github.com/abhi-thombare/" target="_blank" aria-label="GitHub"><i
+                class="fab fa-github"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/in/abhi-thombare-414783336/" target="_blank"
+              aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a class="instagram" href="https://www.instagram.com/hey._.abhi.9/?igsh=d3hqcnJkYnhvaG14#/" target="_blank"
+              aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="facebook" href="https://facebook.com/" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook"></i></a>
+            <a class="mail" href="mailto:abhithombre06@gmail.com/" aria-label="Email"><i
+                class="fas fa-envelope"></i></a>
+          </div>
+
+          <div class="credit">Made with ♥ — Abhi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom cursor elements -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Dark mode toggle -->
+  <button id="darkToggle" aria-label="Toggle dark mode" title="Toggle theme">
+    <i id="darkIcon" class="fa-solid fa-moon"></i>
+  </button>
+
+  <script src="script.js">
+
+  </script>
+</body>
+
+</html>

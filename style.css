@@ -1,0 +1,307 @@
+ /* ---------- Root & Theme ---------- */
+    :root {
+      --bg: #0f1724;
+      /* dark-ish terminal background */
+      --card: #0b1220;
+      --fg: #cbd5e1;
+      --muted: #94a3b8;
+      --accent: #00ff99;
+      --glass: rgba(255, 255, 255, 0.03);
+    }
+
+    body.light {
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --fg: #0b1220;
+      --muted: #475569;
+      --accent: #0077ff;
+      --glass: rgba(0, 0, 0, 0.03);
+    }
+
+    /* Use hacker font */
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Share Tech Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      cursor: none;
+      /* hide native cursor for custom cursor */
+      transition: background .25s ease, color .25s ease;
+    }
+
+    /* ---------- Layout ---------- */
+    .page {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 28px;
+    }
+
+    .top-right {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 999;
+    }
+
+    .resume-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--glass);
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px);
+    }
+
+    .resume-btn i {
+      font-size: 14px
+    }
+
+    /* Main hero area */
+    .hero {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+      padding: 34px;
+      border-radius: 12px;
+      border: 1px solid var(--glass);
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
+    }
+
+    .hero-left {
+      flex: 0 0 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-left img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .hero-right {
+      flex: 1;
+    }
+
+    .name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+
+    .name-sub {
+      font-size: 18px;
+      color: var(--muted);
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+
+    .role {
+      font-size: 18px;
+      color: var(--fg);
+      margin: 8px 0 18px;
+      opacity: .98;
+      transition: opacity .35s ease;
+    }
+
+    /* About card below */
+    .about {
+      margin-top: 18px;
+      background: var(--card);
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid var(--glass);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about h3 {
+      margin: 0 0 8px 0;
+      color: var(--fg);
+      font-size: 18px;
+    }
+
+    .about ul {
+      margin: 10px 0 0 18px
+    }
+
+    .about li {
+      margin-bottom: 8px
+    }
+
+    /* Social icons */
+    .socials {
+      margin-top: 18px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .socials a {
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 20px;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      transition: transform .15s ease, background .18s, color .18s;
+    }
+
+    .socials a:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Different hover colors */
+    .socials a.github:hover {
+      color: #24292e
+    }
+
+    .socials a.linkedin:hover {
+      color: #0A66C2
+    }
+
+    .socials a.instagram:hover {
+      color: #E1306C
+    }
+
+    .socials a.facebook:hover {
+      color: #1877F2
+    }
+
+    .socials a.mail:hover {
+      color: #ff6b6b
+    }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .hero-left {
+        order: 0
+      }
+
+      .hero-right {
+        order: 1
+      }
+
+      .hero-right .profile-actions {
+        justify-content: center
+      }
+
+      .about {
+        text-align: left
+      }
+
+      .name-row {
+        justify-content: center
+      }
+    }
+
+    /* ---------- Dark toggle (bottom-right) ---------- */
+    #darkToggle {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--glass);
+      color: var(--fg);
+      z-index: 999;
+      cursor: pointer;
+      transition: transform .15s ease, background .2s;
+    }
+
+    #darkToggle:hover {
+      transform: translateY(-5px)
+    }
+
+    /* ---------- Custom cursor ---------- */
+    #cursor {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid var(--accent);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 99999;
+      transition: width .12s ease, height .12s ease, background .12s ease, border-color .12s ease, opacity .12s;
+      mix-blend-mode: difference;
+    }
+
+    /* bigger hover state */
+    #cursor.link-hover {
+      width: 40px;
+      height: 40px;
+      border-width: 2px;
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    /* helper small inner dot for contrast on light theme */
+    #cursor-dot {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 99999;
+      transition: transform .05s linear;
+    }
+
+    /* subtle footer credit */
+    .credit {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--muted);
+    }
